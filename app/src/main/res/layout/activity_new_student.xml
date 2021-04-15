@@ -56,11 +56,13 @@
             android:layout_weight="50" />
     </LinearLayout>
 
-    <Spinner
+    <Switch
         android:id="@+id/condition"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="10"
+        android:onClick="change"
+        android:text="can get vaccine"/>
 
     <LinearLayout
         android:layout_width="match_parent"

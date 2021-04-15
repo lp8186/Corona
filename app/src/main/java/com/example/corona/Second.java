@@ -72,18 +72,19 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (students.get(position).getStudentCondition()) {
-            if ((students.get(position).getSecondVaccine().did())) {
-                place2.setVisibility(View.VISIBLE);
-                date2.setVisibility(View.VISIBLE);
-                submit.setVisibility(View.VISIBLE);
-                position2 = position;
-            }
+            if ((students.get(position).getSecondVaccine().getDate().equals("null"))&&(students.get(position).getSecondVaccine().getPlace().equals("null"))) {
+                    place2.setVisibility(View.VISIBLE);
+                    date2.setVisibility(View.VISIBLE);
+                    submit.setVisibility(View.VISIBLE);
+                    position2 = position;
+                }
             else{
-                place2.setVisibility(View.INVISIBLE);
-                date2.setVisibility(View.INVISIBLE);
-                submit.setVisibility(View.INVISIBLE);
-                Toast.makeText(this, "Already got vaccine", Toast.LENGTH_SHORT).show();
-            }
+                    place2.setVisibility(View.INVISIBLE);
+                    date2.setVisibility(View.INVISIBLE);
+                    submit.setVisibility(View.INVISIBLE);
+                    Toast.makeText(this, "Already got vaccine", Toast.LENGTH_SHORT).show();
+                }
+
         }
         else{
             place2.setVisibility(View.INVISIBLE);

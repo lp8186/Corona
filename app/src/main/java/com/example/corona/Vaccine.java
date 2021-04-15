@@ -9,8 +9,8 @@ public class Vaccine {
         this.date=date;
     }
     public Vaccine(){
-        place=null;
-        date=null;
+        place="null";
+        date="null";
     }
     public String getPlace(){
         return place;
@@ -23,8 +23,5 @@ public class Vaccine {
     }
     public void setDate(String data){
         this.date=date;
-    }
-    public boolean did(){
-        return ((place.equals("null"))&&(date.equals("null")));
     }
 }

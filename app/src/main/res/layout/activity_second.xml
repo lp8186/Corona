@@ -27,7 +27,8 @@
             android:id="@+id/place2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="10" />
+            android:layout_weight="10"
+            android:hint="place"/>
 
         <EditText
             android:id="@+id/date2"
@@ -35,14 +36,16 @@
             android:layout_height="0dp"
             android:layout_weight="10"
             android:ems="10"
-            android:inputType="date" />
+            android:inputType="date"
+            android:hint="date"/>
 
         <Button
             android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
-            android:text="Submit" />
+            android:text="Submit"
+            android:onClick="submit2"/>
 
         <Space
             android:layout_width="match_parent"

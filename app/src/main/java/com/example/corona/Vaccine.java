@@ -12,4 +12,19 @@ public class Vaccine {
         place=null;
         date=null;
     }
+    public String getPlace(){
+        return place;
+    }
+    public String getDate(){
+        return date;
+    }
+    public void setPlace(String place){
+        this.place=place;
+    }
+    public void setDate(String data){
+        this.date=date;
+    }
+    public boolean did(){
+        return ((place.equals("null"))&&(date.equals("null")));
+    }
 }

@@ -32,6 +32,8 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
     ArrayList<Users> students= new ArrayList<Users>();
     ArrayList<String> studentsNames= new ArrayList<String>();
     Users stuTmp;
+    Vaccine vaccine2;
+    int position2=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,11 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
         place2= (EditText) findViewById(R.id.place2);
         date2= (EditText) findViewById(R.id.date2);
         submit= (Button) findViewById(R.id.submit);
+
+        place2.setVisibility(View.INVISIBLE);
+        date2.setVisibility(View.INVISIBLE);
+        submit.setVisibility(View.INVISIBLE);
+
         refUsers.addListenerForSingleValueEvent(new ValueEventListener(){
         @Override
             public void onDataChange(@NonNull DataSnapshot dS) {
@@ -65,15 +72,40 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (students.get(position).getStudentCondition()) {
-            place2.setVisibility(View.VISIBLE);
-            date2.setVisibility(View.VISIBLE);
-            submit.setVisibility(View.VISIBLE);
+            if ((students.get(position).getSecondVaccine().did())) {
+                place2.setVisibility(View.VISIBLE);
+                date2.setVisibility(View.VISIBLE);
+                submit.setVisibility(View.VISIBLE);
+                position2 = position;
+            }
+            else{
+                place2.setVisibility(View.INVISIBLE);
+                date2.setVisibility(View.INVISIBLE);
+                submit.setVisibility(View.INVISIBLE);
+                Toast.makeText(this, "Already got vaccine", Toast.LENGTH_SHORT).show();
+            }
         }
         else{
             place2.setVisibility(View.INVISIBLE);
             date2.setVisibility(View.INVISIBLE);
             submit.setVisibility(View.INVISIBLE);
             Toast.makeText(this, "Can't get vaccine", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    public void submit2(View view) {
+        if(place2.getText().toString().equals(""))
+            Toast.makeText(this, "Enter the place", Toast.LENGTH_SHORT).show();
+        else if (date2.getText().toString().equals(""))
+            Toast.makeText(this, "Enter the date", Toast.LENGTH_SHORT).show();
+        else{
+            stuTmp=students.get(position2);
+            vaccine2= new Vaccine(place2.getText().toString(),date2.getText().toString());
+            stuTmp.setSecondVaccine(vaccine2);
+            refUsers.child(String.valueOf(position2)).setValue(stuTmp);
+            place2.setVisibility(View.INVISIBLE);
+            date2.setVisibility(View.INVISIBLE);
+            submit.setVisibility(View.INVISIBLE);
         }
 
     }

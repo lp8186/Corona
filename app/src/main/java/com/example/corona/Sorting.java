@@ -129,7 +129,7 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
                         for (DataSnapshot data : dS.getChildren()) {
                             stuTmp3= data.getValue(Users.class);
                             if (stuTmp3.getStudentGrade()==chosenGrade)
-                                information.setText(information.getText().toString()+"\n"+stuTmp3.getStudentName()+""+stuTmp3.getStudentLastName());
+                                information.setText(information.getText().toString()+"\n"+stuTmp3.getStudentName()+" "+stuTmp3.getStudentLastName());
                         }
                     }
                     @Override
@@ -150,7 +150,7 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
                     for (DataSnapshot data : dS.getChildren()) {
                         stuTmp3= data.getValue(Users.class);
                         if (stuTmp3.getStudentCondition())
-                            information.setText(information.getText().toString()+"\n"+stuTmp3.getStudentName()+""+stuTmp3.getStudentLastName());
+                            information.setText(information.getText().toString()+"\n"+stuTmp3.getStudentName()+" "+stuTmp3.getStudentLastName());
                     }
                 }
                 @Override
@@ -166,7 +166,7 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
                 public void onDataChange(@NonNull DataSnapshot dS) {
                     for (DataSnapshot data : dS.getChildren()) {
                         stuTmp3= data.getValue(Users.class);
-                        information.setText(information.getText().toString()+"\n"+stuTmp3.getStudentName()+""+stuTmp3.getStudentLastName());
+                        information.setText(information.getText().toString()+"\n"+stuTmp3.getStudentName()+" "+stuTmp3.getStudentLastName());
                     }
                 }
                 @Override

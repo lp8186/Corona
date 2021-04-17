@@ -145,7 +145,7 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
             if (chosenGrade==6)
                 Toast.makeText(this, "chose the grade", Toast.LENGTH_SHORT).show();
             else{
-                query=refUsers.orderByChild("studentGradeNum");
+                query=refUsers.orderByChild("studentNumGrade");
                 query.addListenerForSingleValueEvent(new ValueEventListener(){
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dS) {

@@ -24,6 +24,13 @@ import java.util.ArrayList;
 
 import static com.example.corona.FBref.refUsers;
 
+/**
+ * Students.
+ * @author Liad Peretz
+ * @version	1.0
+ * @since 16/4/2021
+ * short description- you can see all the information about your students  and update information about the vaccines.
+ */
 public class Students extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView studentsList2;
     TextView name2,lastName2,grade2,gradeNum2,condition2;
@@ -80,6 +87,16 @@ public class Students extends AppCompatActivity implements AdapterView.OnItemCli
         });
         studentsList2.setOnItemClickListener(this);
     }
+    /**
+     * OnItemClick.
+     * Short description- Present the chosen student's information.
+     * <p>
+     *      AdapterView<?> parent
+     *      View view
+     *      int position
+     *      long id
+     * @param parent- the chosen listView, view- the chosen item, position- the place of the chosen item, id- the chosen line.
+     */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         name2.setText(students2.get(position).getStudentName());
@@ -122,6 +139,13 @@ public class Students extends AppCompatActivity implements AdapterView.OnItemCli
             condition2.setText("can't get vaccine");
         }
     }
+    /**
+     * Submit2.
+     * Short description- Update the new information about the student's vaccines in the Fire Base data base.
+     * <p>
+     *      View view
+     * @param view- the chosen item.
+     */
     public void submit3(View view) {
         if(!(help)){
             if ((place01.getText().toString().equals(students2.get(position02).getFirstVaccine().getPlace()))&&(date01.getText().toString().equals(students2.get(position02).getFirstVaccine().getDate())))
@@ -153,10 +177,26 @@ public class Students extends AppCompatActivity implements AdapterView.OnItemCli
 
         }
     }
+    /**
+     * OnCreateOptionsMenu.
+     * Short descriptions- "Calls" the options menu.
+     * <p>
+     *    Menu menu
+     * @param menu the menu
+     * @return true if it worked.
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    /**
+     * OnOptionsItemSelected.
+     * Short description- Moves from this activity to other activity according to the selected item.
+     * <p>
+     *     MenuItem item
+     * @param item the selected item
+     * @return true if it worked.
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.sorting){

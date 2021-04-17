@@ -23,6 +23,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import static com.example.corona.FBref.refUsers;
+/**
+ * New Student.
+ * @author Liad Peretz
+ * @version	1.0
+ * @since 16/4/2021
+ * Short description- You can add new student in this activity.
+ */
 public class NewStudent extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText name,lastName,place,date;
@@ -75,7 +82,16 @@ public class NewStudent extends AppCompatActivity implements AdapterView.OnItemS
 
 
     }
-
+    /**
+     * OnItemSelected.
+     * Short description- Get the grade and grade num.
+     * <p>
+     *      AdapterView<?> parent
+     *      View view
+     *      int position
+     *      long id
+     * @param parent- the chosen spinner, view- the chosen item, position- the place of the chosen item, id- the chosen line.
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if(parent==grade)
@@ -87,6 +103,13 @@ public class NewStudent extends AppCompatActivity implements AdapterView.OnItemS
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    /**
+     * Change.
+     * Short description- Change the student's condition(can get vaccine or not).
+     * <p>
+     *      View view
+     * @param view- the chosen item.
+     */
     public void change(View view) {
         if (condition1) {
             condition1 = false;
@@ -99,6 +122,13 @@ public class NewStudent extends AppCompatActivity implements AdapterView.OnItemS
             date.setVisibility(View.VISIBLE);
         }
     }
+    /**
+     * Submit.
+     * Short description- Enter the new student into the Fire Base data base.
+     * <p>
+     *      View view
+     * @param view- the chosen item.
+     */
     public void submit(View view) {
         if (name.getText().toString().equals(""))
             Toast.makeText(this, "Enter the name", Toast.LENGTH_SHORT).show();
@@ -154,11 +184,26 @@ public class NewStudent extends AppCompatActivity implements AdapterView.OnItemS
             }
         }
     }
-
+    /**
+     * OnCreateOptionsMenu.
+     * Short descriptions- "Calls" the options menu.
+     * <p>
+     *    Menu menu
+     * @param menu the menu
+     * @return true if it worked.
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    /**
+     * OnOptionsItemSelected.
+     * Short description- Moves from this activity to other activity according to the selected item.
+     * <p>
+     *     MenuItem item
+     * @param item the selected item
+     * @return true if it worked.
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.students){

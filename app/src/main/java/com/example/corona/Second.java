@@ -23,6 +23,13 @@ import java.util.ArrayList;
 
 import static com.example.corona.FBref.refUsers;
 
+/**
+ * Second.
+ * @author Liad Peretz
+ * @version	1.0
+ * @since 16/4/2021
+ * Short description- You can update the information about the second vaccine.
+ */
 public class Second extends AppCompatActivity implements AdapterView.OnItemClickListener{
     ListView studentsList;
     EditText place2,date2;
@@ -68,6 +75,16 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
 
 
     }
+    /**
+     * OnItemClick.
+     * Short description- Get the position(key_id) of the chosen student.
+     * <p>
+     *      AdapterView<?> parent
+     *      View view
+     *      int position
+     *      long id
+     * @param parent- the chosen listView, view- the chosen item, position- the place of the chosen item, id- the chosen line.
+     */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (students.get(position).getStudentCondition()) {
@@ -93,6 +110,13 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
         }
 
     }
+    /**
+     * Submit2.
+     * Short description- Update the new information about the student's second vaccine in the Fire Base data base.
+     * <p>
+     *      View view
+     * @param view- the chosen item.
+     */
     public void submit2(View view) {
         if(place2.getText().toString().equals(""))
             Toast.makeText(this, "Enter the place", Toast.LENGTH_SHORT).show();
@@ -109,10 +133,26 @@ public class Second extends AppCompatActivity implements AdapterView.OnItemClick
         }
 
     }
+    /**
+     * OnCreateOptionsMenu.
+     * Short descriptions- "Calls" the options menu.
+     * <p>
+     *    Menu menu
+     * @param menu the menu
+     * @return true if it worked.
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    /**
+     * OnOptionsItemSelected.
+     * Short description- Moves from this activity to other activity according to the selected item.
+     * <p>
+     *     MenuItem item
+     * @param item the selected item
+     * @return true if it worked.
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.students){

@@ -1,5 +1,12 @@
 package com.example.corona;
 
+/**
+ * Users.
+ * @author Liad Peretz
+ * @version	1.0
+ * @since 16/4/2021
+ * short description- new object called Users.
+ */
 public class Users {
     public String studentName;
     public String studentLastName;

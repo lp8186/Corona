@@ -25,6 +25,13 @@ import java.util.ArrayList;
 
 import static com.example.corona.FBref.refUsers;
 
+/**
+ * Sorting.
+ * @author Liad Peretz
+ * @version	1.0
+ * @since 16/4/2021
+ * Short description- Presents the names of the students by desired sorting.
+ */
 public class Sorting extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner option01,option02,option03;
     TextView information;
@@ -59,6 +66,16 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
         option02.setOnItemSelectedListener(this);
         option03.setOnItemSelectedListener(this);
     }
+    /**
+     * OnItemSelected.
+     * Short description- Get the desired sorting.
+     * <p>
+     *      AdapterView<?> parent
+     *      View view
+     *      int position
+     *      long id
+     * @param parent- the chosen spinner, view- the chosen item, position- the place of the chosen item, id- the chosen line.
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if (parent==option01){
@@ -89,11 +106,17 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
         if (parent==option03)
             chosenGradeNum=position;
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    /**
+     * Submit4.
+     * Short description- Present the wanted information.
+     * <p>
+     *      View view
+     * @param view- the chosen item.
+     */
     public void submit4(View view) {
         if (chosen==1){
             information.setText("");
@@ -176,10 +199,26 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
         }
 
     }
+    /**
+     * OnCreateOptionsMenu.
+     * Short descriptions- "Calls" the options menu.
+     * <p>
+     *    Menu menu
+     * @param menu the menu
+     * @return true if it worked.
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    /**
+     * OnOptionsItemSelected.
+     * Short description- Moves from this activity to other activity according to the selected item.
+     * <p>
+     *     MenuItem item
+     * @param item the selected item
+     * @return true if it worked.
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         int id= item.getItemId();
         if (id==R.id.students){

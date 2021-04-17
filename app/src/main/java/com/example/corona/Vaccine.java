@@ -1,5 +1,12 @@
 package com.example.corona;
 
+/**
+ * Vaccine.
+ * @author Liad Peretz
+ * @version	1.0
+ * @since 14/4/2021
+ * short description- new object called Vaccine.
+ */
 public class Vaccine {
     public String place;
     public String date;

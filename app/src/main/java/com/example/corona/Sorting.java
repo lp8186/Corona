@@ -84,6 +84,7 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
                 option02.setVisibility(View.INVISIBLE);
                 option03.setVisibility(View.INVISIBLE);
                 submit3.setVisibility(View.INVISIBLE);
+                information.setText("");
             }
             else if (position==1){
                 option02.setVisibility(View.VISIBLE);

@@ -28,7 +28,7 @@ public class Vaccine {
     public void setPlace(String place){
         this.place=place;
     }
-    public void setDate(String data){
+    public void setDate(String date){
         this.date=date;
     }
 }

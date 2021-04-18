@@ -37,8 +37,8 @@ public class Sorting extends AppCompatActivity implements AdapterView.OnItemSele
     TextView information;
     Button submit3;
     String [] options001={"chose sorting","According grade and grade num","According grade","Can get vaccine","Can't get vaccine"};
-    String [] options002={"chose the grade","ז","ח","ט","י","יא","יב"};
-    String [] options003={"chose the grade num","1","2","3","4","5","6","7","8","9"};
+    String [] options002={"grade","ז","ח","ט","י","יא","יב"};
+    String [] options003={"grade num","1","2","3","4","5","6","7","8","9"};
     ArrayAdapter adp;
     Query query;
     Users stuTmp3;
